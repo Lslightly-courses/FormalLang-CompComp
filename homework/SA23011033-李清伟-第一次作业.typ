@@ -1,5 +1,4 @@
 #import "TypstTemplates/templates/assignment.typ": *
-#import "@preview/cetz:0.2.0"
 
 #show: project.with(
   title: "第一次作业",
@@ -16,7 +15,7 @@ b. ${x | x in ZZ and x > 5}$
 
 c. ${x | x in NN and x < 5}$
 
-d. ${"\"aba\""}$
+d. ${"aba"}$
 
 e. ${epsilon}$
 
