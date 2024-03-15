@@ -64,7 +64,7 @@ NFA accept if any one of NFA copy machine is in accept state, NFA accepts the st
 
 Powerset of NFA states are the running states of NFA copy machines. Each running state is a set of NFA states.
 
-construct the DFA for NFA's running state(configuration).
+construct the DFA for NFA's running state(configuration). #linkToSlides(95)
 
 === Closed Under Concat
 
@@ -109,16 +109,26 @@ GNFA, #linkToSlides(131)
 
 steps, #linkToSlides(129)
 
-step1, #linkToSlides(138)
+step1, #linkToSlides(138)，初始状态添加一个新的初始状态，添加 $epsilon$ 边。对所有接受状态，添加 $epsilon$ 边到新唯一接受状态，将同向的同src和dst的边通过“或”合并。对于没要边相连的结点，添加 $emptyset$ 边，即转不过去。
 
-step2, #linkToSlides(141)
+step2, #linkToSlides(141)。在repair的过程中，对于所有入结点和出结点，添加入结点到出结点的“或”正则表达式部分。
 ]
 
 === Non-regular Languages
 
 example: ${0^n 1^n | n >= 0}$
 
+#theorem[Pumping Lemma for regular languege. if A is a regular language, then there exists pumping length p, where if s is a string of A of length >= p, then s may be divided to xyz and satisfy 3 conditions. #linkToSlides(164)]
 
+第三点是如何证明的？The length > p，总是可以缩减。
 
+#theorem[${0^n 1^n}$ is not regular language. #linkToSlides(171)]
+
+p is the pumping length.
+
+$0^p 1^p$ 拆分为 $x y z$，y可能为:
+1. 包含0
+2. 包含1
+3. 包含0，1。模式只能为 $0^x 1^x$，但是拼接时顺序不一致。
 
 
