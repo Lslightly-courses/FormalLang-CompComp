@@ -54,3 +54,59 @@ $
   3. 删除 $A -> B$。对于 $B -> u$，添加 $A->u$。
   4. $A -> u_1 u_2 ... u_n$, $A -> u_1 A_1$, ...
 ]
+
+== Pushdown Automata(PDA)
+
+PDA相比DFA的区别就是存在一个栈。
+
+#figure(
+  image("PDA.jpg"),
+  caption: "DFA v.s. PDA",
+)
+
+#let trans(input, old, new) = $#input, #old -> #new$
+
+#trans("a", "b", "c"): input a, replace string b in stack with sting c.
+
+PDA有 $epsilon$，而且允许多条 $trans(epsilon, epsilon, epsilon)$，所以是非确定的。
+
+== Equivalence between PDA and Context Free Grammars
+
+#theorem[
+  a context free language can be recognized by PDA
+]
+
+CFG如何构造PDA(自顶向下自动机)。#linkToSlides(67)
+
+产生式的入栈顺序，为逆序。#linkToSlides(68)。
+
+#theorem[
+  the language PDA recognize is context-free language
+]
+
+#linkToSlides(73). x means: 
+
+case1: the symbol poped at the end(to empty stack) is the symbol pushed at the beginning(from empty stack).
+
+$A_(p q) -> a A_(r s) b$, $p ->^(trans(a, epsilon, u)) r, A_(r s), s ->^(trans(b, u, epsilon)) q$.
+
+case2: the symbol poped at the end is not the symbol pushed at the beginning.
+
+$A_(p q) -> A_(p r) A_(r q)$
+
+case3: 
+
+$A_(p p) -> epsilon$
+
+$A(q_0, q_("accept"))$ 是start variable.
+
+two claims. #linkToSlides(80)
+
+claim1 基于推导步数的归纳证明，#linkToSlides(82)
+
+claim2 基于transfer次数的归纳证明，#linkToSlides(94), #linkToSlides(97)
+
+regular language is PDA which ignores the stack, i.e. no change in stack state. All edge add stack change $trans([sigma in Sigma], epsilon, epsilon)$
+
+== Non Context Free Language
+

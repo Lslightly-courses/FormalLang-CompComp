@@ -1,1 +1,3 @@
-#let pdfPageLink(pdfName, pageNum) = link("file:///D:/mygit/Classes/FormalLang-CompComp/slides-notes/"+str(pdfName)+"#page="+str(pageNum))[#pdfName page #pageNum]
+#import "TypstTemplates/templates/pdfpage.typ": *
+
+#let pdfPageLink(pdfName, pageNum) = pdfPageURI("D:/mygit/Classes/FormalLang-CompComp/slides-notes/", pdfName, pageNum)
