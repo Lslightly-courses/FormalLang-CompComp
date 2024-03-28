@@ -110,3 +110,14 @@ regular language is PDA which ignores the stack, i.e. no change in stack state. 
 
 == Non Context Free Language
 
+Pumping lemma for context-free language #linkToSlides(107)
+
+$B -> b B c "规则下: " B => b B c => b b B c c$。只需要找到或者构造这类规则就可以证明。
+
+non-context free language $a^n b^n c^n$可以被分为 $u v x y z$, v和y至少一个非空，但是这就导致顺序错乱或者数量不对。
+
+== Deterministic Pushdown Automaton(DPDA)
+
+4个操作只有一个是非空的。其他操作均无效。#linkToSlides(122)
+
+
