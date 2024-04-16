@@ -6,7 +6,7 @@
 #set math.equation(numbering: "(1)")
 
 #show: project.with(
-  title: "第4次作业",
+  title: "第四次作业",
   authors: (
     (name: "李清伟", email: ""),
   ),
