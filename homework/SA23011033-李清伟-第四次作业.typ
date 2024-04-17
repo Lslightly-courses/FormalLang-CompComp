@@ -65,24 +65,26 @@ $
 d.
 
 $
-& q1 b0 b0 b0 b0 bound\
-& bound q2 b0 b0 b0 bound\
-& bound cross q3 b0 b0 bound\
-& bound cross b0 q4 b0 bound\
-& bound cross b0 cross q3 bound\
-& bound cross b0 q5 cross bound\
-& bound cross q5 b0 cross bound\
-& bound q5 cross b0 cross bound\
-& bound cross q2 b0 cross bound\
-& bound cross cross q3 cross bound\
-& bound cross cross cross q3 bound\
-& bound cross cross q5 cross bound\
-& bound cross q5 cross cross bound\
-& bound q5 cross cross cross bound\
-& bound cross q2 cross cross bound\
-& bound cross cross q2 cross bound\
-& bound cross cross cross q2 bound\
-& bound cross cross cross bound acc
+& q1 b0 b0 b0 b0 b0 b0 bound\
+& bound q2 b0 b0 b0 b0 b0 bound\
+& bound cross q3 b0 b0 b0 b0 bound\
+& bound cross b0 q4 b0 b0 b0 bound\
+& bound cross b0 cross q3 b0 b0 bound\
+& bound cross b0 cross b0 q4 b0 bound\
+& bound cross b0 cross b0 cross q3 bound\
+& bound cross b0 cross b0 q5 cross bound\
+& bound cross b0 cross q5 b0 cross bound\
+& bound cross b0 q5 cross b0 cross bound\
+& bound cross q5 b0 cross b0 cross bound\
+& bound q5 cross b0 cross b0 cross bound\
+& q5 bound cross b0 cross b0 cross bound\
+& bound q2 cross b0 cross b0 cross bound\
+& bound cross q2 b0 cross b0 cross bound\
+& bound cross cross q3 cross b0 cross bound\
+& bound cross cross cross q3 b0 cross bound\
+& bound cross cross cross b0 q4 cross bound\
+& bound cross cross cross b0 cross q4 bound\
+& bound cross cross cross b0 cross bound rej
 $
 
 = 3.2
@@ -201,9 +203,9 @@ b.
   write \# in tape $t$\
   for character c in $w$:#i\
     if c = 0: #i\
-      move head to the right *twice*
+      move head to the right *once*
     #d\ else: #i\
-      move head to the left *once*
+      move head to the left *twice*
     #d
   #d\
   c = read the character under head\
